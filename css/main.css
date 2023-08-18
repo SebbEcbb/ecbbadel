@@ -1,0 +1,362 @@
+html{
+    margin: 0;
+    background: white;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "poppins",sans-serif;
+  }
+a{
+    color: darkslateblue;
+    background-color: transparent;
+}
+
+a:active,a:hover{
+    outline-width:0
+}
+
+h1,h2,h3,h4 {
+    font-family: "Ubuntu", sans-serif;
+}
+h1{
+    font-size: 54px;
+}
+h2{
+    font-size: 40px;
+
+}
+h3{
+  font-size: 36px;
+}
+h4{
+    font-size: 28px;
+}
+p, span{
+    font-size: 20px;
+    text-align: justify;
+
+}
+.container{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+@media only screen and (max-width: 650px) {
+    /* For mobile phones: */
+    * {
+      font-size: smaller;
+    }
+    .tarifs tr td{
+        min-width: 120px;
+    }
+  }
+
+
+
+  
+ .tarifs{
+    border: 1px solid black;
+    gap: 10px;
+ }
+
+ h4{
+    margin-block-end: 10px;
+ }
+ .tarifs th{text-align: left;}
+
+ .tarifs tr td{
+    min-width: 175px;
+}
+
+.note{
+    color: darkslateblue;
+    font-size: 14px;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+}
+.grid5{
+    display: grid;
+    grid-template-columns: 12% 25% 26% 25% 12%;
+    width: auto;
+    padding:0.8px;
+}
+
+.col-3{width: 33.33%;}
+
+
+#site-title{
+    width: 40%;
+    padding:5px;   
+    
+}
+
+#page-hero{
+    width: auto;
+    padding:5px;  
+}
+.responsive {
+width: 100%;
+height: auto;
+}
+
+#page-hero2{
+    /*background-image: url("../Images/hero2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    height: 450px;
+    width: 100%;
+    border: solid 1px;
+    margin: auto;
+    opacity: 0.8;
+}
+
+#page-title{
+    background-color: rgba(239, 211, 211, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+#page-title a{
+    color: rgb(51, 64, 52);
+    text-align: center;
+    
+    text-decoration: none;
+    text-shadow:    
+    25px 25px 25px rgb(245, 243, 240);
+
+}
+#page-title:hover{
+    font-size: 62px;
+    background-color: rgba(199, 181, 181, 0.8);
+    
+
+}
+#page-menu{
+    padding: 5px;
+    text-align:right;
+    background-color: white;
+    height: 75px;
+    z-index: 1;
+    
+}
+#page-menu ul li {
+    list-style-type:none;
+    display: inline;
+    width: 30px;
+}
+
+.list p{
+    font-size: 22px;
+    color: rgb(84, 5, 5);
+    font-family: "ubuntu";
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 60px;
+
+}
+.list-item, .list-item ul, .list-item ul li{
+    font-size: 20px;
+    list-style: none;
+    padding-left: 60px;
+}
+.menuitem a {
+    width: auto;
+    height: auto;
+    margin-right: 25px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 28px;
+    color:black;
+    font-weight: bolder;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+.menuitem a:hover {
+    padding: 10px;
+    background-color: rgb(209, 206, 196) ;
+    border: solid 1px black;
+    border-radius: 5px;
+    font-size:30px;      
+}
+
+.title-deco{
+    color: rgb(100, 100,100);
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+    text-align: center;
+}   
+
+
+#top {
+    float:left;
+    margin-top:10px;
+    margin: left 20px;
+    padding-left: 0;
+    padding: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border: solid 1px;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    opacity: 0.6;
+}
+#top a{
+color: black;
+text-decoration: none;
+transition-property: all;
+transition-duration: 0.5s;
+}
+#top:hover{
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color:rgb(209, 206, 196) ;
+    opacity: 0.8;
+}
+#top a:hover {
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 3px rgb(123, 117, 142);
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;   
+    opacity: 0.5; 
+}
+.sticky ul li a {
+    padding-right: 10px !important;
+    margin-right: 5px !important;
+    font-size: 18px;    
+  }
+.sticky:hover{
+    opacity: 1;
+}
+#page-description{
+    font-family: "Ubuntu","poppins",sans-serif;
+
+}
+#page-description a{
+    margin-block-end: 0px;
+    text-align: left;
+}
+#page-description h1{
+    margin-top: 0;
+}
+
+.s25{
+    height: 25px;
+    width: 100%;
+}
+
+.s50{
+    height: 50px;
+    width: 100%;
+}
+.s100{
+    height: 100px;
+    width: 100%;
+}
+.video{
+    width:100%;
+    height:400px;
+}
+.video-text{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.index{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; 
+    max-width: 1400px;
+}
+
+  .index h3 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: darkslateblue;
+    text-decoration: underline;
+  }
+    .index a {    
+    font-size: 22px; 
+    color: darkslateblue;
+    padding-left: 2%;
+    text-decoration: none; 
+    transition-property: all;
+    transition-duration: 0.5s;
+  }
+  .index a:hover, .content-title {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color:maroon;
+  text-shadow: 3px 3px 3px rgb(123, 117, 142);
+  }
+  .index ul{list-style: none;}
+
+  .sub-item{
+    margin-left: 5%;
+    font-size: 80%;
+  }
+  .deco{
+    font-size: 48px;
+    color:maroon;
+    text-shadow: 3px 3px 3px rgb(123, 117, 142);
+  }
+  .sep{
+    margin-top: 50px;
+    margin-bottom: 50px;   
+    height: 10px;
+    background-color: #ecc68e;
+    border-bottom: 2px solid rgb(128, 125, 125);
+  }
+
+  .indent100{
+    padding-top: 100px;
+    padding-left: 75px;
+    margin-block-start: 15px;
+  }
+
+  .grow{
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  .grow:hover{
+    font-size: 112%;
+    color:black;
+  }
+
+  #cordonnées{
+    margin-left: 50px;
+    font-size: 24px;
+    gap: 8px;
+    font-weight: bold;
+  }
+#footer{
+    /*display: grid;
+    grid-template-columns: 5% 30% 30% 30% 5%;*/
+    font-weight: bold;
+    font-family: "poppins",sans-serif;
+    font-size: 18px;
+    text-align: center !important;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+.hide{
+    display: none;
+}
