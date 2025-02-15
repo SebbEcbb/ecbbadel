@@ -89,29 +89,24 @@ p, span{
 
 #site-title{
     width: 40%;
+<<<<<<< HEAD
     padding:5px;   
     max-width: 300px;
     
+=======
+    padding:5px;
+    max-width: 300px;
+>>>>>>> 2001af4 (merged)
 }
 
 #page-hero{
     width: auto;
     padding:5px;  
 }
+
 .responsive {
 width: 100%;
 height: auto;
-}
-
-#page-hero2{
-    /*background-image: url("../Images/hero2.JPG");
-    background-repeat: no-repeat;
-    background-size: cover;*/
-    height: 450px;
-    width: 100%;
-    border: solid 1px;
-    margin: auto;
-    opacity: 0.8;
 }
 
 #page-title{
@@ -173,19 +168,19 @@ height: auto;
     height: auto;
     margin-right: 25px;
     font-family: "Ubuntu", sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     color:black;
     font-weight: bolder;
     text-decoration: none;
     transition-property: all;
-    transition-duration: 0.5s;
+    transition-duration: 1s;
 }
 .menuitem a:hover {
     padding: 10px;
-    background-color: rgb(209, 206, 196) ;
+    background-color: rgb(249, 231, 169) ;
     border: solid 1px black;
-    border-radius: 5px;
-    font-size:30px;      
+    border-radius: 15px;
+    font-size:28px;      
 }
 
 .title-deco{
@@ -234,6 +229,7 @@ transition-duration: 0.5s;
     top: 0;
     width: 100%;   
     opacity: 0.5; 
+    display:grid
 }
 .sticky ul li a {
     padding-right: 10px !important;
@@ -319,7 +315,7 @@ transition-duration: 0.5s;
   }
   .sep{
     margin-top: 50px;
-    margin-bottom: 50px;   
+    margin-bottom: 60px;   
     height: 10px;
     background-color: #ecc68e;
     border-bottom: 2px solid rgb(128, 125, 125);
