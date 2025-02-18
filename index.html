@@ -20,7 +20,7 @@
     <div id="page-hero" ><img src="./Images/hero.JPG" alt="ECB Badel" class="responsive"></div>
     <nav>
       <div id="page-menu">
-        <div id="top"><a href="#site-title">haut</a></div>
+        <div id="logo" class="hide"><a href="#site-title">ECB Badel</a></div>
         <ul>
             <li class="menuitem"> <a href="#services">Services</a> </li>                
             <li class="menuitem"> <a href="#par4">Photos</a> </li>                
@@ -535,12 +535,12 @@
       window.onscroll = function() {myFunction()};
       
       function myFunction() {
-          if (document.documentElement.scrollTop > 600) {
+          if (document.documentElement.scrollTop > 675) {
           document.getElementById("page-menu").className = "sticky";
-          document.getElementById("top").className = "sticky";
+          document.getElementById("logo").className = "sticky";
           } else {
           document.getElementById("page-menu").className = "page-menu ";
-          document.getElementById("top").className = "page-menu ";
+          document.getElementById("logo").className = "hide";
           }
       }
   </script> 
