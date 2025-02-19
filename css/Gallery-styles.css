@@ -1,14 +1,6 @@
 
   
-  .header {
-    font-family: "Ubuntu", sans-serif;
-    text-align: center;
-    padding: 32px;
-    color: #0a0a23;
-    margin-top: 50px;
-    border-bottom: 6px solid #ecc68e;
-    border-top: 6px solid #ecc68e;
-  }
+
   
   .gallery {
     display: flex;
