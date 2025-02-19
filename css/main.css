@@ -215,6 +215,18 @@ transition-duration: 1s;
     margin-bottom: 10px;
     text-shadow: 3px 3px 3px rgb(123, 117, 142);
 }
+
+#top{
+    font-size: 35px;
+    position:fixed;
+    right: 10px;
+}
+
+#top a {
+    color: maroon;
+    
+}
+
 .sticky {
     position: fixed;
     top: 0;
@@ -222,6 +234,8 @@ transition-duration: 1s;
     opacity: 0.5; 
     display:grid
 }
+
+
 .sticky ul li a {
     padding-right: 10px !important;
     margin-right: 5px !important;
@@ -344,6 +358,9 @@ transition-duration: 1s;
     margin: 0 auto;
 }
 
+.show{
+    display: inline;
+}
 
 .hide{
     display: none;

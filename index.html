@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECB Badel Home</title>
+    <title>ECB Badel</title>
     <link rel="icon" href="Images/icon.png">
     <link rel="stylesheet" href="./css/Gallery-styles.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -78,7 +78,8 @@
     <h2 class="content-title">Qui nous sommes</h2>
 
     <p><br>
-      ECB Badel est une micro-entreprise à multiservices artisanales. <br>
+      ECB Badel est une micro-entreprise à multiservices artisanales, installé dans le Haut Bréda (38580) . 
+      <br>
       <br>  
       On vous accompagne dans vos travaux du domaine de
       l'entretien, de la rénovation ou de la création. 
@@ -122,8 +123,8 @@
     <div class="list">
       <p>Espaces verts</p>
         <ul class="list-item">
-          <li>Fauchage, débroussaillage ou tonte</li>
-          <li>Petit-abattage, débitage ou élagage des arbres</li> 
+          <li>Fauchage, débroussaillage et tonte de parcs et jardins</li>
+          <li>Petit-abattage, débitage et élagage</li> 
         </ul>
     </div>
 
@@ -131,7 +132,7 @@
     <div class="list">
       <p>Peinture & Lasure extérieure </p>
         <ul class="list-item">
-          <li>Façades chalets extérieures</li>
+          <li>Façades</li>
           <li>Volets & Portes</li> 
           <li>Terrasses</li>
            <li>Abris</li>
@@ -147,7 +148,6 @@
           <li>Plafonds</li>
           <li>Sols</li>
           <li>Salles de bain</li>
-          <li>Cuisines</li>
         </ul>
     </div>  
 
@@ -493,6 +493,7 @@
   </div>
 <div class="s100"></div>
 
+<div id="top" class="hide"><a href="#site-title">Retour</a></div>
 
   <div id="par5"class="sep"></div> 
   <h2 class="content-title">Contact</h2>
@@ -511,16 +512,19 @@
   <div class="s100"></div>
 <div class="s100"></div>
 
+
+
 <div id="footer">
-  <div></div>
   <div class="hide">
     <a href="ecbbadel">ECB Badel Entreprise</a><br>  
     <a href="conditions">Conditions et Termes</a><br>
-
   </div>
+
+ 
   <div>
-    <p style="text-align: center;">Site par ©2023-2025 ECB Badel</p>
-    <p style="text-align: center;"class="note" >Création de sites possible. <a href="#par5">Contactez-nous</a></p>
+
+    <p style="text-align: center;">©2022-2025 ECB Badel</p>
+    <p style="text-align: center;" class="note" >Création de sites possible. <a href="#par5">Contactez-nous</a></p>
   </div>
   <div class="hide">
     <a href="conditions">Formulaire de contact</a><br>
@@ -538,9 +542,11 @@
           if (document.documentElement.scrollTop > 675) {
           document.getElementById("page-menu").className = "sticky";
           document.getElementById("logo").className = "sticky";
+          /*document.getElementById("top").className = "show";*/
           } else {
-          document.getElementById("page-menu").className = "page-menu ";
+          document.getElementById("page-menu").className = "page-menu";
           document.getElementById("logo").className = "hide";
+          /*document.getElementById("top").className = "hide";*/
           }
       }
   </script> 
