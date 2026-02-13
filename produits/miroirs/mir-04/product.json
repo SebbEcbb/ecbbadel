@@ -1,0 +1,9 @@
+{
+  "id": "MIR-04",
+  "name": "MIROIR-04",
+  "description": "Fiche produit en cours de rédaction<br>dimensions : 97 x 57 cm",
+  "n": 3,
+  "price": 1,
+  "category": "Decoration",
+  "path": "products/décoration/MIR-04"
+}

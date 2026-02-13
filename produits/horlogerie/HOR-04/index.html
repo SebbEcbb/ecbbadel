@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Produit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 150%; /* Adjust based on doc length */
+            height: 0;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.active { display: flex; }
+        .nav-btn {
+            cursor: pointer;
+            padding: 20px;
+            color: white;
+            font-size: 2rem;
+            user-select: none;
+            transition: opacity 0.3s;
+        }
+        .nav-btn:hover { opacity: 0.7; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 font-sans">
+
+    <!-- Top Navigation -->
+    <nav class="p-4 border-b flex justify-between items-center bg-white sticky top-0 z-50">
+        <a id="back-link" href="#" class="text-stone-600 hover:text-black flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Retour au catalogue
+        </a>
+        <a id="next-product" href="#" class="text-stone-600 hover:text-black flex items-center gap-2 font-medium">
+            Produit Suivant
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+        <!-- Header Info -->
+        <header class="mb-8 text-center md:text-left">
+            <h1 id="product-name" class="text-4xl font-serif font-bold uppercase tracking-widest mb-2">Chargement...</h1>
+            <p id="product-price" class="text-2xl text-stone-500 font-light"></p>
+        </header>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+            <!-- Images will be injected here -->
+        </section>
+
+        <!-- Action Section -->
+        <div class="flex justify-center mb-12">
+            <a id="contact-btn" href="#" class="bg-stone-800 text-white px-8 py-3 rounded-none hover:bg-stone-700 transition-colors uppercase tracking-widest text-sm">
+                Contacter le vendeur ou faire une offre
+            </a> 
+        </div>
+
+        <!-- Description Section -->
+        <section class="w-full bg-white shadow-sm border border-stone-200">
+            <div id="description-content" class="w-full">
+                <!-- Iframe injected here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="absolute top-5 right-5 text-white cursor-pointer text-4xl" onclick="closeLightbox()">&times;</span>
+        <div class="nav-btn" onclick="prevImg()">&#10094;</div>
+        <img id="lightbox-img" src="" class="max-w-[85%] max-h-[85vh] object-contain shadow-2xl">
+        <div class="nav-btn" onclick="nextImg()">&#10095;</div>
+    </div>
+
+    <script src="/js/product_details.js"></script>
+    
+</body>
+</html>

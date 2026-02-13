@@ -1,0 +1,10 @@
+# Ignore the admin folder entirely
+/admin/
+
+# Ignore any local database files if you use SQLite
+*.db
+*.sqlite
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
