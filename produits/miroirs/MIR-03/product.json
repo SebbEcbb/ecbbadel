@@ -4,6 +4,6 @@
   "description": "Fiche produit en cours de rédaction<br>dimensions : 75 x 52 cm",
   "n": 3,
   "price": 1,
-  "category": "Decoration",
-  "path": "products/décoration/MIR-03"
+  "category": "miroirs",
+  "active": true
 }

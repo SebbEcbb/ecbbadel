@@ -4,5 +4,6 @@
   "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vR1-Dr8QisLRJBoND4z13NavhYHHgvXIjkD5wpPkHPrKuukoreeOK9AgiYiLmj1mKVvalO3V1V0MnRn/pub?embedded=true\"></iframe>",
   "price": "950",
   "n": 6 ,
-  "category": "horlogerie"
+  "category": "horlogerie",
+  "actif": true
 }

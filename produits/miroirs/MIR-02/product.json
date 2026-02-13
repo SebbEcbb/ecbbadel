@@ -1,9 +1,9 @@
 {
   "id": "MIR-02",
   "name": "MIROIR 02",
-   "description": "Fiche produit en cours de rédaction<br>dimensions : 80 x 60 cm",
+  "description": "Fiche produit en cours de rédaction<br>dimensions : 80 x 60 cm",
   "n": 3,
   "price": 1,
-  "category": "décoration",
-  "path": "produits/décoration/MIR-02/"
+  "category": "miroirs",
+  "active": true
 }

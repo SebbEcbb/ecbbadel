@@ -4,6 +4,6 @@
   "description": "STIEN AUGEZ à VIRIEU", 
   "price": "",
   "category": "horlogerie",
-  "imageCount": 5,
-  "path": "produits/horlogerie/HOR-07/"
+  "n": 5,
+  "active": true
 }

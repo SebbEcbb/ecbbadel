@@ -1,0 +1,162 @@
+{
+    "horlogerie": [
+        {
+            "id": "HOR-01",
+            "name": "HORLOGE COMTOISE 01",
+            "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vR1-Dr8QisLRJBoND4z13NavhYHHgvXIjkD5wpPkHPrKuukoreeOK9AgiYiLmj1mKVvalO3V1V0MnRn/pub?embedded=true\"></iframe>",
+            "price": "950",
+            "n": 6 ,
+            "category": "horlogerie",
+            "active": true
+        },
+        {
+            "id": "HOR-02",
+            "name": "HORLOGE COMTOISE 02",
+            "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vR1-Dr8QisLRJBoND4z13NavhYHHgvXIjkD5wpPkHPrKuukoreeOK9AgiYiLmj1mKVvalO3V1V0MnRn/pub?embedded=true\"></iframe>",
+            "price": "",
+            "category": "horlogerie",
+            "n": 6,
+            "active": true
+        },
+        {
+            "id": "HOR-03",
+            "name": "HORLOGE COMTOISE",
+            "description": "251  X 34 X 28",
+            "price": "",
+            "category": "horlogerie",
+            "n": 3,
+            "active": true
+        },
+        {
+            "id": "HOR-04",
+            "name": "HORLOGE COMTOISE",
+            "description": "232 X 62,5 X 24\nSIGNATURE : CHERDER À MONTSCEAU-LES-MINES",
+            "price": "",
+            "category": "horlogerie",
+            "n": 7,
+            "active": true
+        },
+        {
+            "id": "HOR-05",
+            "name": "HORLOGE COMTOISE",
+            "description": "256 X 51 X 26,5 \nSIGNATURE : LOUIS COMBE À GRAND CROIX",
+            "price": "",
+            "category": "horlogerie",
+            "n": 6,
+            "active": true
+        },
+        {
+            "id": "HOR-06", 
+            "name": "HORLOGE COMTOISE",
+            "description": "", 
+            "price": "",
+            "category": "horlogerie",
+            "imageCount": 5,
+            "active": true
+        },
+        {
+            "id": "HOR-07",
+            "name": "HORLOGE COMTOISE",
+            "description": "STIEN AUGEZ à VIRIEU", 
+            "price": "",
+            "category": "horlogerie",
+            "n": 5,
+            "active": true
+        },
+        {
+            "id": "HOR-08",
+            "name": "HORLOGE COMTOISE",
+            "description": "Desportes à Mornant", 
+            "price": "",
+            "category": "horlogerie",
+            "n": 6,
+            "active": true
+        },
+        {
+            "id": "HOR-09",
+            "name": "HORLOGE COMTOISE",
+            "description": "H BAUDOT à COSNE-S/L'OEIL", 
+            "price": "",
+            "category": "horlogerie",
+            "n": 4,
+            "active": true
+        },
+        {
+            "id": "HOR-10",
+            "name": "HORLOGE COMTOISE",
+            "description": "", 
+            "price": "",
+            "category": "horlogerie",
+            "n": 1,
+            "active": true
+        }
+    ],
+    "miroirs": [
+        {
+            "id": "MIR-01",
+            "name": "MIROIR-01",
+            "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vRHME1xRACk9jryr8BlGWH2Bfg3E8DN_ftUBb4cW3ain5UMf--u_bSiE5AWjnCJQKS5GLe5PVsneoFR/pub?embedded=true\"></iframe>",
+            "n": 4,
+            "price": 380,
+            "category": "miroirs",
+            "active": true
+        },
+        {
+            "id": "MIR-02",
+            "name": "MIROIR 02",
+            "description": "Fiche produit en cours de rédaction<br>dimensions : 80 x 60 cm",
+            "n": 3,
+            "price": 1,
+            "category": "miroirs",
+            "active": true
+        },
+        {
+            "id": "MIR-03",
+            "name": "MIROIR-03",
+            "description": "Fiche produit en cours de rédaction<br>dimensions : 75 x 52 cm",
+            "n": 3,
+            "price": 1,
+            "category": "miroirs",
+            "active": true
+        },
+        {
+            "id": "MIR-04",
+            "name": "MIROIR-04",
+            "description": "Fiche produit en cours de rédaction<br>dimensions : 97 x 57 cm",
+            "n": 3,
+            "price": 1,
+            "category": "miroirs",
+            "active": true
+        },
+        {
+            "id": "MIR-05",
+            "name": "MIROIR-05",
+            "description": "Fiche produit en cours de rédaction<br>dimensions : 77 x 68 cm",
+            "n": 3,
+            "price": 1,
+            "category": "miroirs",
+            "active": true
+        },
+        {
+            "id": "MIR-06",
+            "name": "MIROIR-06",
+            "description": "Fiche produit en cours de rédaction<br>dimensions : 75 x 57 cm",
+            "n": 3,
+            "price": 1,
+            "category": "miroirs",
+            "active": true
+        }
+    ],
+    "véhicules": [
+        {
+            "id": "VEH-01",
+            "name": "LAND ROVER FREELANDER TD4",
+            "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vS-KHiM4zhusbEHxW6BJoXP9c4K_ANxwd_bIuBvgnUbh6YdwuqNuVHAasluAHQN5y4iSDd-tQdH06tm/pub?embedded=true\"></iframe>",
+            "n": 12,
+            "price": 3200,
+            "category": "véhicules",
+            "active": true
+        }
+    ]
+}
+

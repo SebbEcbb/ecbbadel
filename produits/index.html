@@ -60,7 +60,7 @@
                 { "id": "MIR-01", "category": "miroirs", "name": "Classic Round Mirror", "active": true },
                 { "id": "MIR-02", "category": "miroirs", "name": "Minimalist Square Mirror", "active": true },
                 { "id": "MIR-03", "category": "miroirs", "name": "Vintage Gold Frame", "active": false },
-                { "id": "MIR-06", "category": "miroirs", "name": "Arched Vanity Mirror", "active": true },
+                { "id": "MIR-07", "category": "miroirs", "name": "Arched Vanity Mirror", "active": true },
                 { "id": "TAB-01", "category": "tables", "name": "Oak Dining Table", "active": true }
             ]
         };
@@ -92,8 +92,7 @@
 
             const html = activeProducts.map(product => {
                 // Construct the path: category_name/product_id/1.jpg
-                //const imagePath = `${product.category}/${product.id}/1.jpg`;
-                const imagePath = `${product.id}/1.jpg`;
+                const imagePath = `${product.category}/${product.id}/1.jpg`;
                 
                 return `
                 <div class="product-card bg-white rounded-xl shadow-sm border overflow-hidden flex flex-col">
@@ -110,7 +109,7 @@
                         <h3 class="mt-1 text-lg font-bold text-gray-900">${product.name}</h3>
                     </div>
                     <div class="px-4 pb-4">
-                        <a href="${product.id}/index.html" 
+                        <a href="${product.category}/${product.id}/index.html" 
                            class="block text-center w-full bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors">
                             View Details
                         </a>

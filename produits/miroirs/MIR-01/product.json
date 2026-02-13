@@ -4,6 +4,6 @@
   "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vRHME1xRACk9jryr8BlGWH2Bfg3E8DN_ftUBb4cW3ain5UMf--u_bSiE5AWjnCJQKS5GLe5PVsneoFR/pub?embedded=true\"></iframe>",
   "n": 4,
   "price": 380,
-  "category": "Decoration",
-  "path": "products/décoration/MIR-01"
+  "category": "miroirs",
+  "active": true
 }

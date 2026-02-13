@@ -5,5 +5,5 @@
   "price": "",
   "category": "horlogerie",
   "n": 6,
-  "path": "produits/horlogerie/HOR-02/"
+  "active": true
 }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Catégories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .category-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .category-image {
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+        .category-card:hover .category-image {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Header Section -->
+    <header class="bg-white border-b border-gray-200 py-12 mb-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-2">ECB Market</h1>
+            <p class="text-gray-500 text-lg">Explorez nos catégories de produits en vente actuellement</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 pb-20">
+        <!-- Dynamic Grid -->
+        <div id="categoriesContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Cards will be injected here by JS -->
+        </div>
+
+        <!-- Section Info Images -->
+        <div class="mt-16 p-6 bg-blue-50 border border-blue-100 rounded-xl text-center">
+            <p class="text-blue-800 font-medium">
+                💡 Note : Contactez nous pour toute question ou faire une offre. <br> Le lien du contact ce touve dans les fiches-produit.
+            </p>
+        </div>
+    </main>
+    <script src="/admin/product_data.js"></script>
+    <script>
+        /* List of categories
+        const productCategories = [
+            "décoration",
+            "éclairage",
+            "horlogerie",
+            "miroirs",
+            "mobilier",
+            "outillage",
+            "service de table",
+            "véhicules"
+        ];*/
+
+        // Function to render categories
+        function renderCategories() {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = ''; // Clear container
+
+            productCategories.forEach(category => {
+                // Create link/card element
+                const card = document.createElement('a');
+                // Path to the future category products page
+                card.href = `/category.html?category=${encodeURIComponent(category)}`;
+                card.className = 'category-card group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm';
+
+                // Image Path
+                const imagePath = `${category}.webp`;
+
+                card.innerHTML = `
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200 relative">
+                        <img 
+                            src="${imagePath}" 
+                            alt="${category}" 
+                            class="category-image w-full h-full object-cover"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=${category.toUpperCase()}'"
+                        >
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-5 text-center">
+                        <h2 class="text-xl font-bold text-gray-800 capitalize group-hover:text-blue-600 transition-colors">
+                            ${category}
+                        </h2>
+                        <span class="inline-block mt-3 text-sm font-semibold text-gray-400 uppercase tracking-wider group-hover:text-gray-600 transition-colors">
+                            Voir les produits →
+                        </span>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize display
+        window.onload = renderCategories;
+    </script>
+</body>
+</html>

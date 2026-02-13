@@ -4,6 +4,6 @@
   "description": "Desportes à Mornant", 
   "price": "",
   "category": "horlogerie",
-  "imageCount": 6,
-  "path": "produits/horlogerie/HOR-08/"
+  "n": 6,
+  "active": true
 }

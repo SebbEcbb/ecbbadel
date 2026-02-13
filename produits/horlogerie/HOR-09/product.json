@@ -4,6 +4,6 @@
   "description": "H BAUDOT à COSNE-S/L'OEIL", 
   "price": "",
   "category": "horlogerie",
-  "imageCount": 4,
-  "path": "produits/horlogerie/HOR-09/"
+  "n": 4,
+  "active": true
 }

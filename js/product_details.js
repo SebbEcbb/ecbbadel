@@ -12,7 +12,7 @@
 
                 // Set Text Content
                 document.getElementById('product-name').textContent = data.name;
-                document.getElementById('product-price').textContent = `Prix estimé pour marché courant : ${data.price} €`;
+                document.getElementById('product-price').textContent = `Prix proposé : ${data.price} €`;
                 document.title = data.name;
 
                 // Set Description (Iframe)
