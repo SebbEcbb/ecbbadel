@@ -101,7 +101,10 @@
             // 1. Detect category from URL (e.g., .../miroirs/index.html -> 'miroirs')
             // Fallback for demo: assume 'miroirs' if not found in URL structure
             const pathParts = window.location.pathname.split('/').filter(Boolean);
-            const currentCategory = pathParts.length >= 1 ? pathParts[pathParts.length - 2] : "miroirs";
+            let currentCategory = pathParts.length >= 1 ? pathParts[pathParts.length - 2] : "miroirs";
+            if (currentCategory==="v%C3%A9hicules") {
+                currentCategory = "véhicules";
+            }
 
             // 2. Fetch list from JSON
             const list = productsData[currentCategory] || [];

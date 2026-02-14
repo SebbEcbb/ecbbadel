@@ -1,131 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Category</title>
+    <title>Catalogue - Antiquités</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .product-card {
-            transition: transform 0.2s ease-in-out, shadow 0.2s ease-in-out;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .product-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
         }
-        /* Fallback for missing images */
-        .image-placeholder {
-            background: #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 1/1;
+        .aspect-card {
+            aspect-ratio: 4/5;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-stone-50 text-stone-900 font-sans">
 
-    <header class="bg-white border-b sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 py-6">
-            <h1 id="category-title" class="text-3xl font-bold capitalize text-gray-800">Category</h1>
-            <p class="text-gray-500 mt-2">Browse our collection of active products.</p>
+    <!-- Header Section -->
+    <header class="bg-white border-b border-stone-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <nav class="text-sm text-stone-500 mb-1">
+                    <a href="../index.html" class="hover:text-stone-800 transition-colors underline underline-offset-4">Accueil</a>
+                    <span class="mx-2">/</span>
+                    <span id="breadcrumb-category" class="capitalize font-medium text-stone-800">Catégorie</span>
+                </nav>
+                <h1 id="page-title" class="text-3xl font-serif font-bold capitalize tracking-tight text-stone-800">
+                    Chargement...
+                </h1>
+            </div>
+            <div id="item-count" class="text-sm font-medium bg-stone-100 px-3 py-1 rounded-full text-stone-600">
+                0 Articles
+            </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Loading State -->
-        <div id="loading" class="text-center py-20">
-            <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-500 border-t-transparent"></div>
-            <p class="mt-4 text-gray-600">Loading products...</p>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Error/Loading Container -->
+        <div id="status-message" class="text-center py-20">
+            <div class="inline-block animate-pulse text-stone-400 italic text-lg">Recherche des produits en cours...</div>
         </div>
 
         <!-- Product Grid -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 hidden">
-            <!-- Cards will be injected here -->
-        </div>
-
-        <!-- Empty State -->
-        <div id="empty-state" class="hidden text-center py-20">
-            <p class="text-xl text-gray-500">No active products found in this category.</p>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 opacity-0 transition-opacity duration-500">
+            <!-- Dynamic Content -->
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="border-t border-stone-200 mt-20 py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center text-stone-500 text-sm">
+            &copy; 2020-2026 ECB BADEL - Tous droits réservés.
+        </div>
+    </footer>
+
     <script>
-        /**
-         * DATA STRUCTURE
-         * In a real scenario, you would fetch this from 'products.json'
-         * or a small API.
-         */
-        const catalogData = {
-            "products": [
-                { "id": "MIR-01", "category": "miroirs", "name": "Classic Round Mirror", "active": true },
-                { "id": "MIR-02", "category": "miroirs", "name": "Minimalist Square Mirror", "active": true },
-                { "id": "MIR-03", "category": "miroirs", "name": "Vintage Gold Frame", "active": false },
-                { "id": "MIR-06", "category": "miroirs", "name": "Arched Vanity Mirror", "active": true },
-                { "id": "TAB-01", "category": "tables", "name": "Oak Dining Table", "active": true }
+        const productsData = {
+            "horlogerie": [
+                { "id": "HOR-01", "name": "HORLOGE COMTOISE 01", "description": "Description détaillée", "price": "950", "category": "horlogerie", "active": true },
+                { "id": "HOR-02", "name": "HORLOGE COMTOISE 02", "description": "", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-03", "name": "HORLOGE COMTOISE", "description": "251 X 34 X 28", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-04", "name": "HORLOGE COMTOISE", "description": "232 X 62,5 X 24", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-05", "name": "HORLOGE COMTOISE", "description": "256 X 51 X 26,5", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-06", "name": "HORLOGE COMTOISE", "description": "", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-07", "name": "HORLOGE COMTOISE", "description": "STIEN AUGEZ à VIRIEU", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-08", "name": "HORLOGE COMTOISE", "description": "Desportes à Mornant", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-09", "name": "HORLOGE COMTOISE", "description": "H BAUDOT à COSNE", "price": "", "category": "horlogerie", "active": true },
+                { "id": "HOR-10", "name": "HORLOGE COMTOISE", "description": "", "price": "", "category": "horlogerie", "active": true }
+            ],
+            "miroirs": [
+                { "id": "MIR-01", "name": "MIROIR-01", "description": "Superbe miroir doré", "price": 380, "category": "miroirs", "active": true },
+                { "id": "MIR-02", "name": "MIROIR 02", "description": "80 x 60 cm", "price": 1, "category": "miroirs", "active": true },
+                { "id": "MIR-03", "name": "MIROIR-03", "description": "75 x 52 cm", "price": 1, "category": "miroirs", "active": true },
+                { "id": "MIR-04", "name": "MIROIR-04", "description": "97 x 57 cm", "price": 1, "category": "miroirs", "active": true },
+                { "id": "MIR-05", "name": "MIROIR-05", "description": "77 x 68 cm", "price": 1, "category": "miroirs", "active": true },
+                { "id": "MIR-06", "name": "MIROIR-06", "description": "75 x 57 cm", "price": 1, "category": "miroirs", "active": true }
+            ],
+            "véhicules": [
+                { "id": "VEH-01", "name": "LAND ROVER FREELANDER TD4", "description": "Excellent état", "price": 3200, "category": "véhicules", "active": true }
             ]
         };
 
-        async function initCategoryPage() {
+        function init() {
             const grid = document.getElementById('product-grid');
-            const loader = document.getElementById('loading');
-            const emptyState = document.getElementById('empty-state');
-            const titleElem = document.getElementById('category-title');
+            const status = document.getElementById('status-message');
+            const titleElem = document.getElementById('page-title');
+            const breadcrumb = document.getElementById('breadcrumb-category');
+            const countElem = document.getElementById('item-count');
 
-            // 1. Determine current category from URL or folder structure
-            // In category_name/index.html, you can hardcode this or detect it:
-            const currentPath = window.location.pathname;
-            const categoryMatch = currentPath.split('/').filter(Boolean).slice(-2, -1)[0] || 'miroirs'; 
-            
-            titleElem.textContent = categoryMatch;
+            // 1. Detect category from URL (e.g., .../miroirs/index.html -> 'miroirs')
+            // Fallback for demo: assume 'miroirs' if not found in URL structure
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            const currentCategory = pathParts.length >= 1 ? pathParts[pathParts.length - 2] : "miroirs";
 
-            // 2. Filter active products for this category
-            const activeProducts = catalogData.products.filter(p => 
-                p.category.toLowerCase() === categoryMatch.toLowerCase() && p.active
-            );
+            // 2. Fetch list from JSON
+            const list = productsData[currentCategory] || [];
+            const activeItems = list.filter(item => item.active);
 
-            // 3. Render Cards
-            if (activeProducts.length === 0) {
-                loader.classList.add('hidden');
-                emptyState.classList.remove('hidden');
+            // 3. Update UI Headers
+            titleElem.textContent = currentCategory;
+            breadcrumb.textContent = currentCategory;
+            countElem.textContent = `${activeItems.length} Article${activeItems.length > 1 ? 's' : ''}`;
+
+            if (activeItems.length === 0) {
+                status.innerHTML = `<p class="text-stone-400">Aucun produit actif dans la catégorie "${currentCategory}".</p>`;
                 return;
             }
 
-            const html = activeProducts.map(product => {
-                // Construct the path: category_name/product_id/1.jpg
-                //const imagePath = `${product.category}/${product.id}/1.jpg`;
-                const imagePath = `${product.id}/1.jpg`;
+            // 4. Build Cards
+            const cardsHtml = activeItems.map(item => {
+                // Formatting price
+                const displayPrice = item.price && item.price > 1 ? `${item.price}€` : "Prix sur demande";
                 
+                // Constructing Image Path: category/id/1.jpg
+                const imageSrc = `../${currentCategory}/${item.id}/1.jpg`;
+                
+                // Removing HTML tags from description for card preview
+                const cleanDesc = item.description.replace(/<[^>]*>?/gm, '').trim() || "Consulter pour plus de détails";
+
                 return `
-                <div class="product-card bg-white rounded-xl shadow-sm border overflow-hidden flex flex-col">
-                    <div class="relative aspect-square overflow-hidden bg-gray-100">
+                <div class="product-card bg-white rounded-lg border border-stone-200 overflow-hidden flex flex-col">
+                    <a href="${item.id}/index.html" class="block group overflow-hidden bg-stone-100 aspect-card relative">
                         <img 
-                            src="${imagePath}" 
-                            alt="${product.name}"
-                            class="w-full h-full object-cover"
-                            onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span class=\'text-gray-400 text-sm\'>Image Not Found</span></div>'"
+                            src="${imageSrc}" 
+                            alt="${item.name}"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/400x500/e7e5e4/a8a29e?text=Image+Indisponible'"
                         >
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">${product.id}</span>
-                        <h3 class="mt-1 text-lg font-bold text-gray-900">${product.name}</h3>
-                    </div>
-                    <div class="px-4 pb-4">
-                        <a href="${product.id}/index.html" 
-                           class="block text-center w-full bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors">
-                            View Details
-                        </a>
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold tracking-widest text-stone-500 uppercase">
+                            ${item.id}
+                        </div>
+                    </a>
+                    
+                    <div class="p-5 flex-grow flex flex-col">
+                        <h2 class="text-lg font-serif font-bold text-stone-800 mb-2">${item.name}</h2>
+                        <p class="text-stone-500 text-sm line-clamp-2 mb-4 flex-grow italic">
+                            ${cleanDesc}
+                        </p>
+                        
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-100">
+                            <span class="text-base font-bold text-stone-900">${displayPrice}</span>
+                            <a href="${item.id}/index.html" class="text-stone-400 hover:text-stone-800 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 `;
             }).join('');
 
-            grid.innerHTML = html;
-            loader.classList.add('hidden');
-            grid.classList.remove('hidden');
+            // 5. Inject and Show
+            grid.innerHTML = cardsHtml;
+            status.classList.add('hidden');
+            grid.classList.remove('opacity-0');
         }
 
-        // Initialize on load
-        window.addEventListener('DOMContentLoaded', initCategoryPage);
+        window.onload = init;
     </script>
 </body>
 </html>
