@@ -316,11 +316,13 @@ transition-duration: 1s;
     margin-left: 5%;
     font-size: 80%;
   }
+
   .deco{
     font-size: 48px;
-    color:maroon;
+    color:beige;
     text-shadow: 3px 3px 3px rgb(123, 117, 142);
   }
+  
   .sep{
     margin-top: 50px;
     margin-bottom: 60px;   

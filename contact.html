@@ -117,10 +117,14 @@
 
                 
                 const currentSrc = iframe.src;
+
                 // Append the entry parameter to the iframe source
                 iframe.src = `${currentSrc}&${fieldId}=${encodeURIComponent(productRef)}`;
                 if (backToProduct && productUrl) {
                     backToProduct.href = productUrl;
+                }
+                else{
+                    backToProduct.href = '/'; // Default fallback URL
                 }   
             }
         }
