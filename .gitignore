@@ -1,5 +1,7 @@
 # Ignore the admin folder entirely
 /admin/
+/test/
+test*
 
 # Ignore any local database files if you use SQLite
 *.db
@@ -8,5 +10,3 @@
 # Ignore OS specific files
 .DS_Store
 Thumbs.db
-
-test*
