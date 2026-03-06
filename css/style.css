@@ -118,3 +118,20 @@ body {
     
     .nav-links.active { right: 0; }
 }
+
+/* Custom styling for the Google Doc content*/
+#new-content div {
+        padding: 2%;
+        margin: auto;
+    }
+
+@media screen and (min-width: 768px) {
+    #new-content div {
+        padding: 10%;
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+
+
