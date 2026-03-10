@@ -10,7 +10,7 @@
     --accent-color: rgb(252, 221, 165);
     --text-main: #1f202b;
     --text-light: antiquewhite;
-    --bg-main: sandybrown;
+    --bg-main: rgb(247, 240, 235);
     --bg-light: #f8f9fa;
     --font-main: 'Poppins', sans-serif;
     
@@ -46,7 +46,9 @@ body {
     color: var(--text-light);
 }
 
+nav {background-color : var(--bg-main)}
 
+section{transition: all 0.4s ease;}
 
 /* Reusable Components  */
 .btn-primary {
