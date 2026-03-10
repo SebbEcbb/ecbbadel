@@ -24,7 +24,7 @@ function injectCopyright(elementId) {
         ? `${startYear} - ${currentYear}` 
         : `${startYear}`;
     
-    const copyrightText = `&copy; ${dateRange} ${companyName}. Tout droits réservés.`;
+    const copyrightText = `&copy; ${dateRange} ${companyName}. Tout droits réservés.` + ` <br><br> <a href="/mentions-legales/" target="_blank" class="text-gray-500 hover:text-gray-700 transition">Mentions légales</a>`;
     
     const target = document.getElementById(elementId);
     if (target) {
