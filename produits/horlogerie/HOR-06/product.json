@@ -1,9 +1,9 @@
 {
   "id": "HOR-06", 
-  "name": "HORLOGE COMTOISE",
-  "description": "", 
-  "price": "",
+  "name": "Horloge Comtoise au Fronton 'Scène de Chasse au Sanglier'",
+  "description": "<iframe src=\"https://docs.google.com/document/d/e/2PACX-1vR9ovoR9oupDxKPu4WDnBEvJTegA2LQ24v0H6ri7bzImv9O6VOMa-h0umvpwo2KeU7x2rF5dzbovGqQ/pub?embedded=true\"></iframe>",
+  "price": "825 ",
   "category": "horlogerie",
-  "imageCount": 5,
+  "n": 5,
   "active": true
 }
