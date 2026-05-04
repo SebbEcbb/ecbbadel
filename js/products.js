@@ -12,7 +12,7 @@
                 { "id": "HOR-10", "name": "Horloge Comtoise à Mouvement Squelette sur Sellette", "description": "Maître Horloger : Non identifié (Mécanisme de type Morbier)", "price": "650 ", "category": "horlogerie", "active": true }
             ],
             "miroirs": [
-                { "id": "MIR-01", "name": "MIROIR-01", "description": "Superbe miroir doré", "price": 480, "category": "miroirs", "active": true },
+                { "id": "MIR-01", "name": "MIROIR-01", "description": "Superbe miroir doré", "price": 380, "category": "miroirs", "active": true },
                 { "id": "MIR-02", "name": "MIROIR 02", "description": "80 x 60 cm", "price": 1, "category": "miroirs", "active": true },
                 { "id": "MIR-03", "name": "MIROIR-03", "description": "75 x 52 cm", "price": 1, "category": "miroirs", "active": true },
                 { "id": "MIR-04", "name": "MIROIR-04", "description": "97 x 57 cm", "price": 1, "category": "miroirs", "active": true },
