@@ -71,114 +71,12 @@
     <!-- Footer -->
     <footer class="border-t border-stone-200 mt-20 py-10 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center text-stone-500 text-sm">
-            &copy; 2020-2026 ECB BADEL - Tous droits réservés.
+            &copy; 2020-2026 ECB BADEL - Tous droits réservés. <br>
+            <a href="../mentions-legales/" class="hover:text-stone-800 transition-colors underline underline-offset-4">Mentions légales</a>
         </div>
     </footer>
 
-    <script>
-        const productsData = {
-            "horlogerie": [
-                { "id": "HOR-01", "name": "Horloge Comtoise Lyonnaise", "description": "Maître Horloger : Desportes (Mornant)", "price": "880 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-02", "name": "Horloge Comtoise à Mouvement Apparent", "description": "Maître Horloger : Non signé (Mouvement anonyme de haute facture)", "price": "750 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-03", "name": "Horloge Comtoise à Fronton Solaire", "description": "Maître Horloger : Signature non identifiée (Manivelle présente)", "price": "650 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-04", "name": "Horloge Comtoise à Décor Polychrome et Balancier Lyre", "description": "Maître Horloger : Signé 'CHERDEK à Montceau-les-Mines'", "price": "1150 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-05", "name": "Horloge Comtoise au Fronton 'Le Paon et les Cygnes'", "description": "Maître Horloger : Signé 'Louis COMBE à Grand-Croix'", "price": "775 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-06", "name": "Horloge Comtoise au Fronton 'Scène de Chasse au Sanglier'", "description": "Maître Horloger : Non identifié (Mécanisme traditionnel)", "price": "825 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-07", "name": "Horloge Comtoise 'Le Laboureur' de Virieu", "description": "Maître Horloger : Signé 'Stien Auger à Virieu' (Isère)", "price": "750 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-08", "name": "Horloge Comtoise Lyonnaise à Fronton Solaire", "description": "Maître Horloger : Desportes (Mornant) ", "price": "850 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-09", "name": "Horloge Comtoise à Balancier Lyre 'Au Vase Fleuri'", "description": "Maître Horloger : H. BAUDOT à Cosne (Cosne-Cours-sur-Loire) ", "price": "1200 ", "category": "horlogerie", "active": true },
-                { "id": "HOR-10", "name": "Horloge Comtoise à Mouvement Squelette sur Sellette", "description": "Maître Horloger : Non identifié (Mécanisme de type Morbier)", "price": "650 ", "category": "horlogerie", "active": true }
-            ],
-            "miroirs": [
-                { "id": "MIR-01", "name": "MIROIR-01", "description": "Superbe miroir doré", "price": 380, "category": "miroirs", "active": true },
-                { "id": "MIR-02", "name": "MIROIR 02", "description": "80 x 60 cm", "price": 1, "category": "miroirs", "active": true },
-                { "id": "MIR-03", "name": "MIROIR-03", "description": "75 x 52 cm", "price": 1, "category": "miroirs", "active": true },
-                { "id": "MIR-04", "name": "MIROIR-04", "description": "97 x 57 cm", "price": 1, "category": "miroirs", "active": true },
-                { "id": "MIR-05", "name": "MIROIR-05", "description": "77 x 68 cm", "price": 1, "category": "miroirs", "active": true },
-                { "id": "MIR-06", "name": "MIROIR-06", "description": "75 x 57 cm", "price": 1, "category": "miroirs", "active": true }
-            ],
-            "véhicules": [
-                { "id": "VEH-01", "name": "LAND ROVER FREELANDER TD4", "description": "Excellent état", "price": 3200, "category": "véhicules", "active": true }
-            ]
-        };
-
-        function init() {
-            const grid = document.getElementById('product-grid');
-            const status = document.getElementById('status-message');
-            const titleElem = document.getElementById('page-title');
-            const breadcrumb = document.getElementById('breadcrumb-category');
-            const countElem = document.getElementById('item-count');
-
-            // 1. Detect category from URL (e.g., .../miroirs/index.html -> 'miroirs')
-            // Fallback for demo: assume 'miroirs' if not found in URL structure
-            const pathParts = window.location.pathname.split('/').filter(Boolean);
-            const currentCategory = pathParts.length >= 1 ? pathParts[pathParts.length - 2] : "miroirs";
-
-            // 2. Fetch list from JSON
-            const list = productsData[currentCategory] || [];
-            const activeItems = list.filter(item => item.active);
-
-            // 3. Update UI Headers
-            titleElem.textContent = currentCategory;
-            breadcrumb.textContent = currentCategory;
-            countElem.textContent = `${activeItems.length} Article${activeItems.length > 1 ? 's' : ''}`;
-
-            if (activeItems.length === 0) {
-                status.innerHTML = `<p class="text-stone-400">Aucun produit actif dans la catégorie "${currentCategory}".</p>`;
-                return;
-            }
-
-            // 4. Build Cards
-            const cardsHtml = activeItems.map(item => {
-                // Formatting price
-                const displayPrice = item.price && item.price > 1 ? `${item.price}€` : "Prix sur demande";
-                
-                // Constructing Image Path: category/id/1.jpg
-                const imageSrc = `../${currentCategory}/${item.id}/1.jpg`;
-                
-                // Removing HTML tags from description for card preview
-                const cleanDesc = item.description.replace(/<[^>]*>?/gm, '').trim() || "Consulter pour plus de détails";
-
-                return `
-                <div class="product-card bg-white rounded-lg border border-stone-200 overflow-hidden flex flex-col">
-                    <a href="${item.id}/index.html" class="block group overflow-hidden bg-stone-100 aspect-card relative">
-                        <img 
-                            src="${imageSrc}" 
-                            alt="${item.name}"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.src='https://placehold.co/400x500/e7e5e4/a8a29e?text=Image+Indisponible'"
-                        >
-                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold tracking-widest text-stone-500 uppercase">
-                            ${item.id}
-                        </div>
-                    </a>
-                    
-                    <div class="p-5 flex-grow flex flex-col">
-                        <h2 class="text-lg font-serif font-bold text-stone-800 mb-2">${item.name}</h2>
-                        <p class="text-stone-500 text-sm line-clamp-2 mb-4 flex-grow italic">
-                            ${cleanDesc}
-                        </p>
-                        
-                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-stone-100">
-                            <span class="text-base font-bold text-stone-900">${displayPrice}</span>
-                            <a href="${item.id}/index.html" class="text-stone-400 hover:text-stone-800 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                `;
-            }).join('');
-
-            // 5. Inject and Show
-            grid.innerHTML = cardsHtml;
-            status.classList.add('hidden');
-            grid.classList.remove('opacity-0');
-        }
-
-        window.onload = init;
-    </script>
+    <script type = "module" src="/js/main.js"></script>
+    
 </body>
 </html>

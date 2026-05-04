@@ -3,7 +3,7 @@
  * Formats as: © 2020 - [Current Year] ECB BADEL. All rights reserved.
  * * @param {footer-copyright} elementId - The ID of the HTML element to inject into.
  */
-function injectCopyright(elementId) {
+export function injectCopyright(elementId) {
     const startYear = 2020;
     const currentYear = new Date().getFullYear();
     const companyName = "ECB BADEL";
@@ -13,7 +13,7 @@ function injectCopyright(elementId) {
         ? `${startYear} - ${currentYear}` 
         : `${startYear}`;
     
-    const copyrightText = `&copy; ${dateRange} ${companyName}. Tout droits réservés.`;
+    const copyrightText = `&copy; ${dateRange} ${companyName}. Tout droits réservés.` + '<br>' + '<a href="../mentions-legales/" class="hover:text-stone-800 transition-colors underline underline-offset-4">Mentions légales</a>';
     
     const target = document.getElementById(elementId);
     if (target) {
@@ -23,7 +23,7 @@ function injectCopyright(elementId) {
     }
 }
 
-// Initialize injection when the DOM is fully loaded
+/* Initialize injection when the DOM is fully loaded
 window.addEventListener('DOMContentLoaded', () => {
     injectCopyright('footer-copyright');
-});
+});*/
